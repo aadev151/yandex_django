@@ -4,7 +4,7 @@
 
 Чтобы запустить проект, воспользуйтесь следующей последовательностью команд, запущенных из терминала в папке `main`.
 
-`pip install -r requirements.txt` для установки Django
+`pip3 install -r requirements.txt` для установки Django
 
 `cd myportfolio` для перехода в папку проекта
 
