@@ -1,0 +1,248 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="dark light">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://raw.githubusercontent.com/aadev151/aadev151.github.io/master/my_logo.png">
+
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+
+    <title>Anisimov Aleksandr</title>
+
+</head>
+
+<body style="background-color: black;">
+
+    <!-- Hello Screen -->
+    <section class="hero is-fullheight" style="background-color: black;" id="block-1">
+
+        <div style="display: block; margin-top: auto; margin-bottom: auto;">
+
+            <video id="hello" style="width: 100%;" autoplay muted loop>
+                <source src="{% static 'portfolio/hello.mov' %}">
+            </video>
+            <img src="{% static 'portfolio/scrolldown.gif' %}" style="position: absolute; top: 20px; left: calc(50% - 50px); width: 100px;">
+
+        </div>
+
+    </section>
+
+
+    <!-- Short Intro -->
+    <section class="hero is-fullheight" style="background-color: #111" id="block-2">
+
+        <div class="container container-with-margins">
+
+            <div id="main-info-container">
+
+                <a class="subtitle intro spaceAfter" style="display: none;" id="first">Hi! 👋</a>
+                <a class="subtitle intro spaceAfter" style="display: none;" id="second">I'm Alex Anisimov.</a>
+                <a class="subtitle intro spaceAfter" style="display: none;" id="third">I'm passionate about coding.</a>
+                <span class="subtitle intro" style="display: none;" id="fourth">You can check my <a href="https://vk.com/aadev151" target="_blank" class="subtitle intro" style="display: none" id="vk">VK</a>, <a href="https://snapchat.com/add/aadev151" target="_blank" class="subtitle intro" style="display: none" id="snap">Snapchat</a>, or <a href="https://github.com/aadev151" target="_blank" class="subtitle intro" style="display: none" id="github">Github</a>.&nbsp;&nbsp;</span>
+                <a class="subtitle intro spaceAfter" style="display: none;" id="fifth">Or simply scroll down.</a>
+
+            </div>
+
+            <script>
+                function showMainInfo() {
+                    $('#first').delay(500).fadeIn(1200);
+                    $('#second').delay(1600).fadeIn(1200);
+                    $('#third').delay(3200).fadeIn(1200);
+                    $('#fourth').delay(4800).fadeIn(1200);
+                    $('#vk').delay(4800).fadeIn(1200);
+                    $('#snap').delay(4800).fadeIn(1200);
+                    $('#github').delay(4800).fadeIn(1200);
+                    $('#fifth').delay(6400).fadeIn(1200);
+
+                }
+            </script>
+
+            <script>
+                var observer = new IntersectionObserver(function(entries) {
+                if(entries[0].isIntersecting === true)
+                    showMainInfo()
+                }, { threshold: [1] });
+
+                observer.observe(document.querySelector("#main-info-container"));
+            </script>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- About Me -->
+    <section class="hero is-fullheight" style="background-color: black" id="block-3">
+
+        <div class="container container-with-margins">
+
+            <div class="about-me-container" id="about-me-container">
+
+                <div class="image about-me-child">
+
+                    <div id="itsme" class="splide" role="group" aria-label="My Photos">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="{% static 'portfolio/me.jpeg' %}">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="{% static 'portfolio/me2.jpeg' %}">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="{% static 'portfolio/me3.jpeg' %}">
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="about">ps. Если нужна, нормальная фотка, то <b><a href="https://ibb.co/2sDkPGL" target="_blank" class="about">воть</a></b>.</p>
+                    </div>
+                </div>
+
+                <div class="notForDesktop">
+                    <br><br>
+                </div>
+
+                <div class="about-me-child">
+                    <h1 class="title intro">It's me. Heeeey 👋</h1>
+
+                    <div class="about">
+
+                        <b>Анисимов Александр</b>
+                        <p>11классник в <a href="https://liceum1535.ru" target="blank">Лицее 1535</a></p>
+                        <br>
+                        <p>Я из Москвы, люблю кодить, читать и слушать музыку. Программирую с 5 класса (уже седьмой год), но начинал с Паскаля. Сейчас в основном занимаюсь фуллстаком для сайтов и iOS-приложениями.</p>
+                        <br>
+                        <p>
+                            <ul>
+                                <li style="list-style-type: '👨‍💻';">
+                                    Использую Python, Swift, c++, HTML+CSS+JS. Мой опыт с Django - первый, до этого использывал Flask.
+                                </li>
+                                <li style="list-style-type: '💸';">
+                                    Фрилансер, работал в основном с сайтами, больше с фронтэндом.
+                                </li>
+                                <li style="list-style-type: '🪙';">
+                                    Нумизмат. Собираю российские и зарубежные монеты.
+                                </li>
+                                <li style="list-style-type: '🌈';">
+                                    Человек, который пытается придумать идеи для стартапа. В моей копилке приложение, уменьшающее количество пластика в отельной индустрии.
+                                </li>
+                                <li style="list-style-type: '🌐';">
+                                    Люблю искать прикольные домены (yandex.love и yandex.solutions свободны - присмотритесь ;) )
+                                </li>
+                            </ul>
+                        </p>
+                        <br>
+
+                        <a class="button is-pink" onclick="$('html, body').animate({scrollTop: $('#block-1').height() + $('#block-2').height() + $('#block-3').height()}, 400);">Мои проекты &RightArrow;</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            document.addEventListener( 'DOMContentLoaded', function() {
+              var splide = new Splide( '#itsme', {
+                  type: 'loop',
+                  pagination: false,
+                  arrows: false,
+                  autoplay: true,
+                  pauseOnFocus: false,
+                  pauseOnHover: false,
+                  interval: 2500
+              } );
+              splide.mount();
+            } );
+        </script>
+
+    </section>
+
+
+    <!-- My Projects -->
+    <section class="hero is-fullheight" style="background-color: #111" id="block-4">
+
+        <div class="container container-with-margins">
+
+            <h1 class="title intro">My Projects</h1>
+
+            <img class="project-logo" src="{% static 'portfolio/helpunicorn.png' %}">
+            <h2 class="subtitle white">HelpUnicorn</h2>
+            <p class="about white">
+                Это онлайн-сообщество благотворительных фондов и айтишников. Веб-сайт на 2200 строк, написанный на Flask'е
+                с api и другими плюшками. Также есть <a href="https://ws.uncorn.me/" target="_blank">конструктор сайтов</a>
+                для фондов. Сейчас я работаю над iOS-приложением. Точнее, оно уже есть
+                (фотки <a href="https://helpunicorn.ru/assets" target="_blank">тут</a>), но дизайн очень плохой, поэтому я
+                делаю <a href="https://postimg.cc/gallery/npHczTv" target="_blank">что-то новое</a>. На сайте сейчас 100+ пользователей. Ссылка -
+                <a href="https://helpunicorn.ru/" target="_blank">https://helpunicorn.ru</a>.
+            </p>
+
+            <br><br>
+
+            <img class="project-logo" src="{% static 'portfolio/duckystyle.jpg' %}">
+            <h2 class="subtitle white">DuckyStyle</h2>
+            <p class="about white">
+                Что-то вроде онлайн аукциона для NFT, но с утками и <a href="https://duckystyle.pythonanywhere.com/about" target="_blank">DFT</a>.
+                После сдачи этого проекта одной из пар на второй курс Яндекс.Лицея, я стал третьим контрибьютером и полностью переработал сайт.
+                Пока, правда, только локально - на хостинге лежит небольшая часть моих новшеств.
+            </p>
+
+            <br><br>
+            <h2 class="subtitle white">Others</h2>
+
+            <a href="https://github.com/aadev151/prevlink" target="_blank"><img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/aadev151/prevlink.png" width="460px"></a>
+            <br>
+            <a href="https://github.com/aadev151/race-game" target="_blank"><img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/aadev151/race-game.png" width="460px"></a>
+            <br>
+            <a href="https://github.com/aadev151/ru-foodbot" target="_blank"><img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/aadev151/ru-foodbot.png" width="460px"></a>
+            <br>
+            <a href="https://github.com/aadev151/xmas-quest" target="_blank"><img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/aadev151/xmas-quest.png" width="460px"></a>
+            <br>
+
+            <p class="about">
+                Есть и другие (PyQT, PyGame, Flask, Tkinter, Kivy, Beeware), но я их сюда включать не стал.
+                <br>
+                Про iOS-приложения не пишу тоже, так как они все локальные. Всего их три штуки: HelpUnicorn, EmojiPedia и простенький аналог Яндекс.Такси
+                (да-да, я такой) пока без карты, только для вызова и поиска водителя.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="hero is-fullheight" style="background-color: black">
+        <div class="hero-body">
+            <div class="container has-text-centered container-with-margins">
+                <h1 class="title intro">Ну и напоследок...</h1>
+                <p class="about" style="font-size: x-large;">
+                    Я программист, не дизайнер. Во всех своих проектах я консультируюсь с другом, который помогает мне с цветовой гаммой.
+                    Этот сайт я делал сам, поэтому, если рябит в глазах, я извиняюсь.
+                </p>
+                <br>
+                <h2 class="subtitle white">Технологии на сайте</h2>
+                <ul class="tech">
+                    <li>Bulma CSS</li>
+                    <li>Django</li>
+                    <li>jQuery</li>
+                    <li>SplideJS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
