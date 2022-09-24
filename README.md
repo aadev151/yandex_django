@@ -28,4 +28,4 @@ Quit the server with CONTROL-C.
 
 ## Видео-презентация
 
-Презентацию проекта Вы можете найти здесь: https://example.com
+Презентацию проекта Вы можете найти здесь: https://easyupload.io/61pjac
