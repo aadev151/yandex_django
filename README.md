@@ -2,12 +2,26 @@
 
 ## Этот проект сделан на Django
 
-Чтобы запустить проект, сначала установите Django.
-- С помощью командной строки:
-`python -m pip install Django`
-- С помощью файла requirements.txt: `pip install -r requirements.txt` из папки `main`
+Чтобы запустить проект, воспользуйтесь следующей последовательностью команд, запущенных из терминала в папке `main`.
 
-Чтобы запустить веб-сайт, во внешней папке `myportfolio` наберите в терминале `python manage.py runserver`
+`cd main` для перехода в папку проекта
+`pip install -r requirements.txt` для установки Django
+`cd myportfolio`
+`python3 manage.py runserver` для запуска программы
+
+После этого Вы получите сообщение в терминале:
+```
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 24, 2022 - 11:04:56
+Django version 4.1.1, using settings 'myportfolio.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+```
+
+Чтобы посетить сайт, посетите http://127.0.0.1:8000. Чтобы прекратить выполнение программы нажмите Control+C.
 
 ### Готово!
 
